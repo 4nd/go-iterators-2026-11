@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9ba9143f-a1c4-46e1-a524-b72f29b3f22a" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file://$USER_HOME$/.local/share/mise/installs/go/1.27.4" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0" />
+      <entry key="M2" value="1.0" />
+      <entry key="M5" value="1.0" />
+      <entry key="M10" value="1.0" />
+      <entry key="M15" value="1.0" />
+      <entry key="M30" value="1.0" />
+      <entry key="H1" value="1.0" />
+      <entry key="H2" value="1.0" />
+      <entry key="H4" value="1.0" />
+      <entry key="D1" value="1.0" />
+      <entry key="W1" value="1.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="4.060250024617614E-6" />
+      <entry key="MS500" value="0.08350462989938122" />
+      <entry key="S2" value="0.5375608585441277" />
+      <entry key="S5" value="0.7801373226798375" />
+      <entry key="S10" value="0.883253826869625" />
+      <entry key="S30" value="0.959463613432279" />
+      <entry key="S60" value="0.9795221352436498" />
+      <entry key="M2" value="0.9897081060816112" />
+      <entry key="M5" value="0.9958704614232248" />
+      <entry key="M10" value="0.9979330946627758" />
+      <entry key="M15" value="0.9986215879944211" />
+      <entry key="M30" value="0.9993105563309241" />
+      <entry key="H1" value="0.9996552187283995" />
+      <entry key="H2" value="0.9998275945023719" />
+      <entry key="H4" value="0.9999137935354087" />
+      <entry key="D1" value="0.999985631739794" />
+      <entry key="W1" value="0.9999979473787595" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3J3r8z0Nvv8ptlu6TBe77Cvek4g" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Go Build.go build example.com/gofixdemo.executor": "Profiler#5",
+    "Go Build.go build iterator_demo.go.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.GoLinterPluginOnboardingV2": "true",
+    "RunOnceActivity.GoLinterPluginStorageMigration": "true",
+    "RunOnceActivity.GoOptimizationToolWindowEnableInLayout.v333333": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.analysis.ui.options.defaults": "true",
+    "RunOnceActivity.go.application.removed.from.services": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "/Users/andy/code/iterators",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "go.sdk"
+  }
+}]]></component>
+  <component name="RunManager" selected="Go Build.go build example.com/gofixdemo">
+    <configuration name="go build example.com/gofixdemo" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$/gofixdemo" />
+      <kind value="PACKAGE" />
+      <package value="example.com/gofixdemo" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$/gofixdemo" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build iterator_demo.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/iterator_demo.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build iterators/" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="example.com/iterators" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build iterator_demo.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-63c95d513abe-57f1b89dcace-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-263.7307.211" />
+        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-GO-263.7307.211" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ba9143f-a1c4-46e1-a524-b72f29b3f22a" name="Changes" comment="" />
+      <created>1788900438044</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788900438044</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoModernizerVersionTracker">
+    <upgrades>
+      <map>
+        <entry key="diff.mod">
+          <value>
+            <VersionUpgradeInfo>
+              <version>1.27</version>
+              <timestamp>1792871076675</timestamp>
+            </VersionUpgradeInfo>
+          </value>
+        </entry>
+      </map>
+    </upgrades>
+  </component>
+</project>
