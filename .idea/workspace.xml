@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ba9143f-a1c4-46e1-a524-b72f29b3f22a" name="Changes" comment="" />
+    <list default="true" id="9ba9143f-a1c4-46e1-a524-b72f29b3f22a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/memorydemo/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/memorydemo/main_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stage1/demo_stage1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stage2/demo_stage2.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stage2/repo/orders.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stage2/repo/orders_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stage3/demo_stage3.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stage3/repo/orders.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stage3/repo/orders_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/talk/iterators.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_stage1.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_stage2.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_stage3.go" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,12 +100,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Go Build.go build example.com/gofixdemo.executor": "Profiler#5",
+    "Go Build.go build example.com/iterators/stage1.executor": "Run",
+    "Go Build.go build example.com/iterators/stage2.executor": "Run",
+    "Go Build.go build example.com/iterators/stage3.executor": "Run",
     "Go Build.go build iterator_demo.go.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.GoLinterPluginOnboardingV2": "true",
     "RunOnceActivity.GoLinterPluginStorageMigration": "true",
     "RunOnceActivity.GoOptimizationToolWindowEnableInLayout.v333333": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.go.analysis.ui.options.defaults": "true",
     "RunOnceActivity.go.application.removed.from.services": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
@@ -107,7 +126,7 @@
     "settings.editor.selected.configurable": "go.sdk"
   }
 }]]></component>
-  <component name="RunManager" selected="Go Build.go build example.com/gofixdemo">
+  <component name="RunManager" selected="Go Build.go build example.com/iterators/stage3">
     <configuration name="go build example.com/gofixdemo" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="iterators" />
       <working_directory value="$PROJECT_DIR$/gofixdemo" />
@@ -117,23 +136,78 @@
       <auto_managed_config_id value="$PROJECT_DIR$/gofixdemo" />
       <method v="2" />
     </configuration>
-    <configuration name="go build iterator_demo.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build example.com/iterators/memorydemo" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="iterators" />
       <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="example.com/iterators/memorydemo" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$/memorydemo" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build example.com/iterators/stage1" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="example.com/iterators/stage1" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$/stage1" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build example.com/iterators/stage2" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="example.com/iterators/stage2" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$/stage2" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build example.com/iterators/stage3" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="example.com/iterators/stage3" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$/stage3" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build iterator_demo.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <working_directory value="$PROJECT_DIR$" />
+      <EXTENSION ID="com.github.l34130.mise.core.run.MiseRunConfigurationSettingsEditor" myConfigEnvironmentStrategy="use_project_settings" myMiseDirEnvCb="false" myMiseConfigEnvironmentTf="" />
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/iterator_demo.go" />
       <method v="2" />
     </configuration>
+    <configuration name="go build iterators" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <working_directory value="$PROJECT_DIR$" />
+      <EXTENSION ID="com.github.l34130.mise.core.run.MiseRunConfigurationSettingsEditor" myConfigEnvironmentStrategy="use_project_settings" myMiseDirEnvCb="false" myMiseConfigEnvironmentTf="" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build iterators/" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="iterators" />
       <working_directory value="$PROJECT_DIR$" />
+      <EXTENSION ID="com.github.l34130.mise.core.run.MiseRunConfigurationSettingsEditor" myConfigEnvironmentStrategy="use_project_settings" myMiseDirEnvCb="false" myMiseConfigEnvironmentTf="" />
       <kind value="PACKAGE" />
       <package value="example.com/iterators" />
       <directory value="$PROJECT_DIR$" />
       <auto_managed_config_id value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Go Build.go build example.com/iterators/memorydemo" />
+      <item itemvalue="Go Build.go build example.com/iterators/stage1" />
+      <item itemvalue="Go Build.go build example.com/iterators/stage2" />
+      <item itemvalue="Go Build.go build example.com/iterators/stage3" />
+      <item itemvalue="Go Build.go build example.com/gofixdemo" />
+      <item itemvalue="Go Build.go build iterators/" />
+      <item itemvalue="Go Build.go build iterators" />
+      <item itemvalue="Go Build.go build iterator_demo.go" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build iterator_demo.go" />

@@ -5,7 +5,7 @@
 //
 // Run it with:
 //
-//	go run demo_stage1.go
+//	go run ./stage1
 //
 // It requires Go 1.23 or newer.
 package main
@@ -20,8 +20,8 @@ func main() {
 	fmt.Println("STAGE 1: MANUAL PAGINATION")
 	api := mockapi.New()
 
-findOrder:
-	for page := 1; ; page++ {
+	found := false
+	for page := 1; !found; page++ {
 		orders, more := api.FetchPage(page)
 
 		for _, order := range orders {
@@ -29,7 +29,8 @@ findOrder:
 
 			if order.TotalP > 5_000 {
 				fmt.Println("  found one — stop")
-				break findOrder
+				found = true
+				break
 			}
 		}
 
