@@ -11,14 +11,14 @@ func New(api *mockapi.API) *Repository {
 	return &Repository{api: api}
 }
 
-// Orders hides pagination, but cannot return until it has fetched and retained
+// Deployments hides pagination, but cannot return until it has fetched and retained
 // every page.
-func (repository *Repository) Orders() []mockapi.Order {
-	var all []mockapi.Order
+func (repository *Repository) Deployments() []mockapi.Deployment {
+	var all []mockapi.Deployment
 
 	for page := 1; ; page++ {
-		orders, more := repository.api.FetchPage(page)
-		all = append(all, orders...)
+		deployments, more := repository.api.FetchPage(page)
+		all = append(all, deployments...)
 
 		if !more {
 			return all

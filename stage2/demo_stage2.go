@@ -1,7 +1,7 @@
 // demo_stage2.go is stage 2 of the pagination refactor.
 //
 // The repository hides pagination from the caller, but it fetches and stores
-// every order before the caller can inspect the first one.
+// every deployment before the caller can inspect the first one.
 //
 // Run it with:
 //
@@ -20,23 +20,19 @@ import (
 func main() {
 	fmt.Println("STAGE 2: EAGER REPOSITORY")
 	api := mockapi.New()
-	orderRepo := repo.New(api)
+	deploymentRepo := repo.New(api)
 
-	orders := orderRepo.Orders()
+	deployments := deploymentRepo.Deployments()
 
-	for _, order := range orders {
-		fmt.Printf("  inspecting %s (%s)\n", order.ID, pounds(order.TotalP))
+	for _, deployment := range deployments {
+		fmt.Printf("  inspecting %s (%s)\n", deployment.ID, deployment.Status)
 
-		if order.TotalP > 5_000 {
-			fmt.Println("  found one — stop")
+		if deployment.Status == mockapi.Failed {
+			fmt.Printf("  latest failed deployment: %s\n", deployment.ID)
 			break
 		}
 	}
 
 	fmt.Printf("  API requests: %d\n", api.Requests())
-	fmt.Printf("  orders materialised: %d\n", len(orders))
-}
-
-func pounds(pence int) string {
-	return fmt.Sprintf("£%d.%02d", pence/100, pence%100)
+	fmt.Printf("  deployments materialised: %d\n", len(deployments))
 }

@@ -22,13 +22,13 @@ func main() {
 
 	found := false
 	for page := 1; !found; page++ {
-		orders, more := api.FetchPage(page)
+		deployments, more := api.FetchPage(page)
 
-		for _, order := range orders {
-			fmt.Printf("  inspecting %s (%s)\n", order.ID, pounds(order.TotalP))
+		for _, deployment := range deployments {
+			fmt.Printf("  inspecting %s (%s)\n", deployment.ID, deployment.Status)
 
-			if order.TotalP > 5_000 {
-				fmt.Println("  found one — stop")
+			if deployment.Status == mockapi.Failed {
+				fmt.Printf("  latest failed deployment: %s\n", deployment.ID)
 				found = true
 				break
 			}
@@ -40,8 +40,4 @@ func main() {
 	}
 
 	fmt.Printf("  API requests: %d\n", api.Requests())
-}
-
-func pounds(pence int) string {
-	return fmt.Sprintf("£%d.%02d", pence/100, pence%100)
 }

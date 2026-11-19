@@ -20,20 +20,16 @@ import (
 func main() {
 	fmt.Println("STAGE 3: LAZY REPOSITORY")
 	api := mockapi.New()
-	orderRepo := repo.New(api)
+	deploymentRepo := repo.New(api)
 
-	for order := range orderRepo.Orders() {
-		fmt.Printf("  inspecting %s (%s)\n", order.ID, pounds(order.TotalP))
+	for deployment := range deploymentRepo.Deployments() {
+		fmt.Printf("  inspecting %s (%s)\n", deployment.ID, deployment.Status)
 
-		if order.TotalP > 5_000 {
-			fmt.Println("  found one — stop")
+		if deployment.Status == mockapi.Failed {
+			fmt.Printf("  latest failed deployment: %s\n", deployment.ID)
 			break
 		}
 	}
 
 	fmt.Printf("  API requests: %d\n", api.Requests())
-}
-
-func pounds(pence int) string {
-	return fmt.Sprintf("£%d.%02d", pence/100, pence%100)
 }

@@ -1,42 +1,48 @@
-// Package mockapi provides the unchanged paginated API used by every demo stage.
+// Package mockapi provides the paginated deployment history used by all three stages.
 package mockapi
 
 import "fmt"
 
-type Order struct {
+type Status string
+
+const (
+	Succeeded Status = "succeeded"
+	Failed    Status = "failed"
+)
+
+type Deployment struct {
 	ID     string
-	TotalP int
+	Status Status
 }
 
 type API struct {
-	pages    [][]Order
+	pages    [][]Deployment
 	requests int
 }
 
 func New() *API {
 	return &API{
-		pages: [][]Order{
+		pages: [][]Deployment{
 			{
-				{ID: "A-100", TotalP: 1_250},
-				{ID: "A-101", TotalP: 6_200},
-				{ID: "A-102", TotalP: 900},
+				{ID: "deploy-106", Status: Succeeded},
+				{ID: "deploy-105", Status: Succeeded},
 			},
 			{
-				{ID: "A-103", TotalP: 4_500},
-				{ID: "A-104", TotalP: 2_100},
-				{ID: "A-105", TotalP: 7_500},
+				{ID: "deploy-104", Status: Failed},
+				{ID: "deploy-103", Status: Succeeded},
 			},
 			{
-				{ID: "A-106", TotalP: 3_250},
-				{ID: "A-107", TotalP: 1_100},
+				{ID: "deploy-102", Status: Failed},
+				{ID: "deploy-101", Status: Succeeded},
 			},
 		},
 	}
 }
 
-func (api *API) FetchPage(page int) ([]Order, bool) {
+// FetchPage returns deployments in newest-first order and reports whether more pages exist.
+func (api *API) FetchPage(page int) ([]Deployment, bool) {
 	api.requests++
-	fmt.Printf("  GET /orders?page=%d\n", page)
+	fmt.Printf("  GET /deployments?page=%d\n", page)
 
 	index := page - 1
 	return api.pages[index], index < len(api.pages)-1

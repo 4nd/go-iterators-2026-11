@@ -22,7 +22,7 @@ func TestEagerAndIteratorProduceTheSameResult(t *testing.T) {
 	}
 
 	if len(retained) != total {
-		t.Fatalf("eager result contains %d orders, want %d", len(retained), total)
+		t.Fatalf("eager result contains %d deployments, want %d", len(retained), total)
 	}
 
 	const expectedRequests = 3

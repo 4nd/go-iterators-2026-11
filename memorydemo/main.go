@@ -14,9 +14,9 @@ import (
 	"runtime"
 )
 
-type Order struct {
-	ID     int
-	TotalP int
+type Deployment struct {
+	ID         int
+	DurationMS int
 }
 
 type API struct {
@@ -33,36 +33,36 @@ func NewAPI(total, pageSize int) *API {
 }
 
 // FetchPage generates one page on demand. The API does not retain generated
-// orders, so the two modes start with the same small baseline.
-func (api *API) FetchPage(page int) ([]Order, bool) {
+// deployments, so the two modes start with the same small baseline.
+func (api *API) FetchPage(page int) ([]Deployment, bool) {
 	start := (page - 1) * api.pageSize
 	if start < 0 || start >= api.total {
 		return nil, false
 	}
 
 	end := min(start+api.pageSize, api.total)
-	orders := make([]Order, end-start)
+	deployments := make([]Deployment, end-start)
 
-	for index := range orders {
+	for index := range deployments {
 		id := start + index
-		orders[index] = Order{
-			ID:     id,
-			TotalP: 100 + id%10_000,
+		deployments[index] = Deployment{
+			ID:         id,
+			DurationMS: 100 + id%10_000,
 		}
 	}
 
 	api.requests++
-	return orders, end < api.total
+	return deployments, end < api.total
 }
 
-// FetchAllOrders is the eager version. Preallocating gives it the best
-// reasonable case, but the completed slice still retains every order.
-func (api *API) FetchAllOrders() []Order {
-	all := make([]Order, 0, api.total)
+// FetchAllDeployments is the eager version. Preallocating gives it the best
+// reasonable case, but the completed slice still retains every deployment.
+func (api *API) FetchAllDeployments() []Deployment {
+	all := make([]Deployment, 0, api.total)
 
 	for page := 1; ; page++ {
-		orders, more := api.FetchPage(page)
-		all = append(all, orders...)
+		deployments, more := api.FetchPage(page)
+		all = append(all, deployments...)
 
 		if !more {
 			return all
@@ -70,15 +70,15 @@ func (api *API) FetchAllOrders() []Order {
 	}
 }
 
-// Orders yields one page at a time. Once the caller finishes a page, that
+// Deployments yields deployments one at a time. Once the caller finishes a page, that
 // page can be reclaimed instead of becoming part of one large result slice.
-func (api *API) Orders() iter.Seq[Order] {
-	return func(yield func(Order) bool) {
+func (api *API) Deployments() iter.Seq[Deployment] {
+	return func(yield func(Deployment) bool) {
 		for page := 1; ; page++ {
-			orders, more := api.FetchPage(page)
+			deployments, more := api.FetchPage(page)
 
-			for _, order := range orders {
-				if !yield(order) {
+			for _, deployment := range deployments {
+				if !yield(deployment) {
 					return
 				}
 			}
@@ -96,8 +96,8 @@ func (api *API) Requests() int {
 
 func main() {
 	mode := flag.String("mode", "", "eager or iterator")
-	total := flag.Int("orders", 5_000_000, "number of generated orders")
-	pageSize := flag.Int("page-size", 10_000, "orders generated per page")
+	total := flag.Int("deployments", 5_000_000, "number of generated deployments")
+	pageSize := flag.Int("page-size", 10_000, "deployments generated per page")
 	flag.Parse()
 
 	if *mode != "eager" && *mode != "iterator" {
@@ -105,7 +105,7 @@ func main() {
 		os.Exit(2)
 	}
 	if *total < 1 || *pageSize < 1 {
-		fmt.Fprintln(os.Stderr, "-orders and -page-size must be positive")
+		fmt.Fprintln(os.Stderr, "-deployments and -page-size must be positive")
 		os.Exit(2)
 	}
 
@@ -117,7 +117,7 @@ func main() {
 	api := NewAPI(*total, *pageSize)
 	var (
 		checksum uint64
-		retained []Order
+		retained []Deployment
 	)
 
 	switch *mode {
@@ -133,7 +133,7 @@ func main() {
 	runtime.ReadMemStats(&after)
 
 	fmt.Printf("mode:          %s\n", *mode)
-	fmt.Printf("orders:        %d\n", *total)
+	fmt.Printf("deployments:   %d\n", *total)
 	fmt.Printf("page size:     %d\n", *pageSize)
 	fmt.Printf("pages fetched: %d\n", api.Requests())
 	fmt.Printf("checksum:      %d\n", checksum)
@@ -143,29 +143,29 @@ func main() {
 	runtime.KeepAlive(retained)
 }
 
-func runEager(api *API) (uint64, []Order) {
-	orders := api.FetchAllOrders()
-	return checksumSlice(orders), orders
+func runEager(api *API) (uint64, []Deployment) {
+	deployments := api.FetchAllDeployments()
+	return checksumSlice(deployments), deployments
 }
 
 func runIterator(api *API) uint64 {
 	var checksum uint64
-	for order := range api.Orders() {
-		checksum += orderChecksum(order)
+	for deployment := range api.Deployments() {
+		checksum += deploymentChecksum(deployment)
 	}
 	return checksum
 }
 
-func checksumSlice(orders []Order) uint64 {
+func checksumSlice(deployments []Deployment) uint64 {
 	var checksum uint64
-	for _, order := range orders {
-		checksum += orderChecksum(order)
+	for _, deployment := range deployments {
+		checksum += deploymentChecksum(deployment)
 	}
 	return checksum
 }
 
-func orderChecksum(order Order) uint64 {
-	return uint64(order.ID)*31 + uint64(order.TotalP)
+func deploymentChecksum(deployment Deployment) uint64 {
+	return uint64(deployment.ID)*31 + uint64(deployment.DurationMS)
 }
 
 func positiveDifference(after, before uint64) uint64 {

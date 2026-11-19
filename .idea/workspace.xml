@@ -5,20 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ba9143f-a1c4-46e1-a524-b72f29b3f22a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/memorydemo/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memorydemo/main_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stage1/demo_stage1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stage2/demo_stage2.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stage2/repo/orders.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stage2/repo/orders_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stage3/demo_stage3.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stage3/repo/orders.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stage3/repo/orders_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/talk/iterators.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stage2/repo/deployments_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stage3/repo/deployments.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stage3/repo/deployments_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_stage1.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_stage2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_stage3.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorydemo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/memorydemo/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorydemo/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/memorydemo/main_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mockapi/mockapi.go" beforeDir="false" afterPath="$PROJECT_DIR$/mockapi/mockapi.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage1/demo_stage1.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage1/demo_stage1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage2/demo_stage2.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage2/demo_stage2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage2/repo/orders.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage2/repo/deployments.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage2/repo/orders_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage3/demo_stage3.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage3/demo_stage3.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage3/repo/orders.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage3/repo/orders_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/talk/iterators.md" beforeDir="false" afterPath="$PROJECT_DIR$/talk/iterators.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +117,7 @@
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "demo/latest-failed-deployment",
     "go.import.settings.migrated": "true",
     "last_opened_file_path": "/Users/andy/code/iterators",
     "node.js.detected.package.eslint": "true",
