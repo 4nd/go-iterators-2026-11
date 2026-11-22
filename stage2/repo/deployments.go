@@ -11,8 +11,7 @@ func New(api *mockapi.API) *Repository {
 	return &Repository{api: api}
 }
 
-// Deployments hides pagination, but cannot return until it has fetched and retained
-// every page.
+// Deployments hides pagination
 func (repository *Repository) Deployments() []mockapi.Deployment {
 	var all []mockapi.Deployment
 

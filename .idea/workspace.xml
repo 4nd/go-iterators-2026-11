@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ba9143f-a1c4-46e1-a524-b72f29b3f22a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/stage2/repo/deployments_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stage3/repo/deployments.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stage3/repo/deployments_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numbers/demo_numbers.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memorydemo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/memorydemo/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memorydemo/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/memorydemo/main_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mockapi/mockapi.go" beforeDir="false" afterPath="$PROJECT_DIR$/mockapi/mockapi.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage1/demo_stage1.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage1/demo_stage1.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stage2/demo_stage2.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage2/demo_stage2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage2/repo/orders.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage2/repo/deployments.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage2/repo/orders_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage2/repo/deployments.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage2/repo/deployments.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage2/repo/deployments_test.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/stage3/demo_stage3.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage3/demo_stage3.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage3/repo/orders.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage3/repo/orders_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage3/repo/deployments.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage3/repo/deployments.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage3/repo/deployments_test.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/talk/iterators.md" beforeDir="false" afterPath="$PROJECT_DIR$/talk/iterators.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,61 +26,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
-    </decayedCancelled>
-    <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0" />
-      <entry key="M10" value="1.0" />
-      <entry key="M15" value="1.0" />
-      <entry key="M30" value="1.0" />
-      <entry key="H1" value="1.0" />
-      <entry key="H2" value="1.0" />
-      <entry key="H4" value="1.0" />
-      <entry key="D1" value="1.0" />
-      <entry key="W1" value="1.0" />
+      <entry key="S2" value="1.0000000000000002" />
+      <entry key="S5" value="1.0000005645481622" />
+      <entry key="S10" value="1.0007513642008035" />
+      <entry key="S30" value="1.0909110833281328" />
+      <entry key="S60" value="1.3015146486128542" />
+      <entry key="M2" value="1.5491034953566167" />
+      <entry key="M5" value="1.7867951665642257" />
+      <entry key="M10" value="1.8870147499135657" />
+      <entry key="M15" value="1.92318178668752" />
+      <entry key="M30" value="1.9608234940339044" />
+      <entry key="H1" value="1.9802160445707386" />
+      <entry key="H2" value="1.990058606634344" />
+      <entry key="H4" value="1.9950168876126395" />
+      <entry key="D1" value="1.9991677515955453" />
+      <entry key="W1" value="1.9998810649425596" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="2.1555692936907697E-305" />
+      <entry key="MS500" value="1.1660371779040728E-61" />
+      <entry key="S2" value="5.843568634763917E-16" />
+      <entry key="S5" value="8.090284023706771E-7" />
+      <entry key="S10" value="9.818691557005627E-4" />
+      <entry key="S30" value="0.1872137759539498" />
+      <entry key="S60" value="0.8321470501820943" />
+      <entry key="M2" value="1.8080522601438342" />
+      <entry key="M5" value="2.9055994917822776" />
+      <entry key="M10" value="3.4080461422606536" />
+      <entry key="M15" value="3.594670147078334" />
+      <entry key="M30" value="3.7917874351838985" />
+      <entry key="H1" value="3.8944678379294166" />
+      <entry key="H2" value="3.946872456322189" />
+      <entry key="H4" value="3.9733452306541643" />
+      <entry key="D1" value="3.995544845906279" />
+      <entry key="W1" value="3.9993632378710244" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="4.060250024617614E-6" />
-      <entry key="MS500" value="0.08350462989938122" />
-      <entry key="S2" value="0.5375608585441277" />
-      <entry key="S5" value="0.7801373226798375" />
-      <entry key="S10" value="0.883253826869625" />
-      <entry key="S30" value="0.959463613432279" />
-      <entry key="S60" value="0.9795221352436498" />
-      <entry key="M2" value="0.9897081060816112" />
-      <entry key="M5" value="0.9958704614232248" />
-      <entry key="M10" value="0.9979330946627758" />
-      <entry key="M15" value="0.9986215879944211" />
-      <entry key="M30" value="0.9993105563309241" />
-      <entry key="H1" value="0.9996552187283995" />
-      <entry key="H2" value="0.9998275945023719" />
-      <entry key="H4" value="0.9999137935354087" />
-      <entry key="D1" value="0.999985631739794" />
-      <entry key="W1" value="0.9999979473787595" />
+      <entry key="MS100" value="2.1608045297542536E-6" />
+      <entry key="MS500" value="0.07360767434968635" />
+      <entry key="S2" value="0.520871714504111" />
+      <entry key="S5" value="0.7703585234958691" />
+      <entry key="S10" value="0.879209973370688" />
+      <entry key="S30" value="1.2240571964217497" />
+      <entry key="S60" value="2.0893205422753938" />
+      <entry key="M2" value="3.3229654821300687" />
+      <entry key="M5" value="4.673542545069524" />
+      <entry key="M10" value="5.284473953428122" />
+      <entry key="M15" value="5.510508460118565" />
+      <entry key="M30" value="5.748788920408338" />
+      <entry key="H1" value="5.872733837524454" />
+      <entry key="H2" value="5.935946090481162" />
+      <entry key="H4" value="5.967867120431528" />
+      <entry key="D1" value="5.994629746966594" />
+      <entry key="W1" value="5.999232458402445" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -101,6 +95,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Go Build.go build example.com/gofixdemo.executor": "Profiler#5",
+    "Go Build.go build example.com/iterators/memorydemo.executor": "Run",
+    "Go Build.go build example.com/iterators/numbers.executor": "Run",
     "Go Build.go build example.com/iterators/stage1.executor": "Run",
     "Go Build.go build example.com/iterators/stage2.executor": "Run",
     "Go Build.go build example.com/iterators/stage3.executor": "Run",
@@ -127,7 +123,7 @@
     "settings.editor.selected.configurable": "go.sdk"
   }
 }]]></component>
-  <component name="RunManager" selected="Go Build.go build example.com/iterators/stage3">
+  <component name="RunManager" selected="Go Build.go build example.com/iterators/numbers">
     <configuration name="go build example.com/gofixdemo" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="iterators" />
       <working_directory value="$PROJECT_DIR$/gofixdemo" />
@@ -144,6 +140,15 @@
       <package value="example.com/iterators/memorydemo" />
       <directory value="$PROJECT_DIR$" />
       <auto_managed_config_id value="$PROJECT_DIR$/memorydemo" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build example.com/iterators/numbers" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="example.com/iterators/numbers" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$/numbers" />
       <method v="2" />
     </configuration>
     <configuration name="go build example.com/iterators/stage1" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
@@ -200,6 +205,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Go Build.go build example.com/iterators/numbers" />
       <item itemvalue="Go Build.go build example.com/iterators/memorydemo" />
       <item itemvalue="Go Build.go build example.com/iterators/stage1" />
       <item itemvalue="Go Build.go build example.com/iterators/stage2" />

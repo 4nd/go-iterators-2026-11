@@ -22,17 +22,25 @@ func main() {
 	api := mockapi.New()
 	deploymentRepo := repo.New(api)
 
+	latestFailure, found, materialisedCount := findLatestFailedDeployment(deploymentRepo)
+	if found {
+		fmt.Printf("  latest failed deployment: %s\n", latestFailure.ID)
+	}
+
+	fmt.Printf("  API requests: %d\n", api.Requests())
+	fmt.Printf("  deployments materialised: %d\n", materialisedCount)
+}
+
+func findLatestFailedDeployment(deploymentRepo *repo.Repository) (mockapi.Deployment, bool, int) {
 	deployments := deploymentRepo.Deployments()
 
 	for _, deployment := range deployments {
 		fmt.Printf("  inspecting %s (%s)\n", deployment.ID, deployment.Status)
 
 		if deployment.Status == mockapi.Failed {
-			fmt.Printf("  latest failed deployment: %s\n", deployment.ID)
-			break
+			return deployment, true, len(deployments)
 		}
 	}
 
-	fmt.Printf("  API requests: %d\n", api.Requests())
-	fmt.Printf("  deployments materialised: %d\n", len(deployments))
+	return mockapi.Deployment{}, false, len(deployments)
 }

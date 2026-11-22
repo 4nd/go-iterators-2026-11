@@ -69,6 +69,26 @@ style: |
     color: inherit;
   }
 
+  section :is(pre, marp-pre) .hljs-title {
+    color: #63d2b3;
+  }
+
+  section :is(pre, marp-pre) :is(.hljs-keyword, .hljs-type) {
+    color: #ff9b91;
+  }
+
+  section :is(pre, marp-pre) :is(.hljs-literal, .hljs-number) {
+    color: #9ccaff;
+  }
+
+  section :is(pre, marp-pre) .hljs-built_in {
+    color: #ffd18a;
+  }
+
+  section :is(pre, marp-pre) .hljs-string {
+    color: #e0baff;
+  }
+
   table {
     border-collapse: collapse;
     font-size: 24px;
@@ -98,6 +118,10 @@ style: |
     display: grid;
     gap: 42px;
     grid-template-columns: 1fr 1fr;
+  }
+
+  section.repository-trace .columns {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 3fr);
   }
 
   .compact pre {
@@ -142,17 +166,33 @@ style: |
 
 # Go iterators
 
-## Finding the latest failed deployment
+Andy Graham · DailyPay
 
-Go 1.23+
+---
+
+# Clean code and optimisation
+
+**Clean code** makes behaviour easier to understand, review and change.
+
+- Make common operations easy to reuse.
+- Keep implementation details behind a clear interface.
+- Keep control flow easy to follow.
+
+**Optimisation** starts with finding where time, memory or requests are being spent.
+
+- Measure before making a change.
+- Avoid work the result doesn’t need.
+- Measure again to verify the improvement.
+
+> Can we keep a function easy to read and still optimised?
 
 <!--
-Ask how many pages we need to fetch before we can report the latest failure.
+Readability matters every time someone comes back to change the code. Performance matters when the code is doing work we can avoid. Sometimes the shape of the code affects both. To see how, let's look at a small example and count the work each version does.
 -->
 
 ---
 
-# Find the latest failed deployment
+# Example: Find the latest failed deployment
 
 The API lists deployments newest first.
 
@@ -182,6 +222,7 @@ for page := 1; !found; page++ {
 
     for _, deployment := range deployments {
         if deployment.Status == mockapi.Failed {
+            fmt.Printf("  latest failed deployment: %s\n", deployment.ID)
             found = true
             break
         }
@@ -193,49 +234,56 @@ for page := 1; !found; page++ {
 }
 ~~~
 
-**Efficient:** two requests
-
-**Caller complexity:** page numbers, continuation state, nested loops
-
 <!--
 Run: go run ./stage1
 
-The caller stops after two requests, but the business question is buried inside pagination control.
+The search runs directly in main and stops after two requests. It tracks page numbers and continuation state in addition to checking each deployment.
 
 The found flag exists only to carry a break from the inner loop to the outer loop.
 -->
 
 ---
 
-<!-- _class: two-code -->
+<!-- _class: tight -->
 
 # Stage 2: eager repository
 
-<div class="columns compact">
-
-<div>
-
 ~~~go
-deploymentRepo := repo.New(api)
-deployments := deploymentRepo.Deployments()
+func findLatestFailedDeployment(deploymentRepo *repo.Repository) (mockapi.Deployment, bool, int) {
+    deployments := deploymentRepo.Deployments()
 
-for _, deployment := range deployments {
-    if deployment.Status == mockapi.Failed {
-        break
+    for _, deployment := range deployments {
+        if deployment.Status == mockapi.Failed {
+            return deployment, true, len(deployments)
+        }
     }
+
+    return mockapi.Deployment{}, false, len(deployments)
 }
 ~~~
 
-</div>
+<!--
+Run: go run ./stage2
+
+The search receives the repository, calls Deployments and loops over a slice.
+-->
+
+---
+
+<!-- _class: two-code repository-trace -->
+
+# All three pages arrive before the loop starts
+
+<div class="columns">
 
 <div>
 
 ~~~go
-func (r *Repository) Deployments() []mockapi.Deployment {
+func (repository *Repository) Deployments() []mockapi.Deployment {
     var all []mockapi.Deployment
 
     for page := 1; ; page++ {
-        deployments, more := r.api.FetchPage(page)
+        deployments, more := repository.api.FetchPage(page)
         all = append(all, deployments...)
 
         if !more {
@@ -247,17 +295,7 @@ func (r *Repository) Deployments() []mockapi.Deployment {
 
 </div>
 
-</div>
-
-<!--
-Run: go run ./stage2
-
-Moving pagination into a repository gives us the caller we want, but Deployments must finish before the caller can inspect anything.
--->
-
----
-
-# All three pages arrive before the loop starts
+<div>
 
 ~~~text
 GET /deployments?page=1
@@ -271,21 +309,31 @@ API requests: 3
 deployments materialised: 6
 ~~~
 
+</div>
+
+</div>
+
 The repository builds the complete slice before the caller can inspect the first deployment.
 
 <!--
-Point at the three GET lines. The slice already exists when the caller breaks.
+Point to the append in Deployments, then to the three GET lines. The repository has built the slice by the time the search returns.
 -->
 
 ---
 
+<!-- _class: tight -->
+
 # Stage 3: range over deployments
 
 ~~~go
-for deployment := range deploymentRepo.Deployments() {
-    if deployment.Status == mockapi.Failed {
-        break
+func findLatestFailedDeployment(deploymentRepo *repo.Repository) (mockapi.Deployment, bool) {
+    for deployment := range deploymentRepo.Deployments() {
+        if deployment.Status == mockapi.Failed {
+            return deployment, true
+        }
     }
+
+    return mockapi.Deployment{}, false
 }
 ~~~
 
@@ -344,7 +392,7 @@ API requests: 2
 
 <!--
 Page 1 has no match. The loop keeps going, so the repository fetches page 2.
-The caller breaks on deploy-104. The repository never asks for page 3.
+The search returns on deploy-104. The repository never asks for page 3.
 -->
 
 ---
@@ -360,16 +408,19 @@ if !yield(deployment) {
 | Deployment | What the loop does | What <code>yield</code> returns |
 |---|---|---|
 | deploy-105 succeeded | Finishes the iteration | <code>true</code> |
-| deploy-104 failed | Hits <code>break</code> | <code>false</code> |
+| deploy-104 failed | Returns from the search function | <code>false</code> |
 
 ~~~go
 type Seq[V any] func(yield func(V) bool)
 ~~~
 
+Leaving the loop early with <code>break</code> or <code>return</code> makes <code>yield</code> return <code>false</code>.
+
 <!--
 Go supplies yield when range calls the iterator. The producer calls yield
 with a deployment. The boolean tells the producer whether the loop is still
-running. Once yield returns false, the producer must stop calling it.
+running. A break or return exits the loop. A continue asks for the next value.
+Once yield returns false, the producer must stop calling it.
 -->
 
 ---
@@ -379,10 +430,10 @@ running. Once yield returns false, the producer must stop calling it.
 # Stage 3: lazy repository
 
 ~~~go
-func (r *Repository) Deployments() iter.Seq[mockapi.Deployment] {
+func (repository *Repository) Deployments() iter.Seq[mockapi.Deployment] {
     return func(yield func(mockapi.Deployment) bool) {
         for page := 1; ; page++ {
-            deployments, more := r.api.FetchPage(page)
+            deployments, more := repository.api.FetchPage(page)
 
             for _, deployment := range deployments {
                 if !yield(deployment) {
@@ -401,7 +452,7 @@ func (r *Repository) Deployments() iter.Seq[mockapi.Deployment] {
 The repository returns as soon as <code>yield</code> returns <code>false</code>.
 
 <!--
-Read from the inside out. The repository offers each deployment to the caller. If the caller has broken out of the loop, yield returns false and the repository returns immediately.
+Read from the inside out. The repository offers each deployment to the caller. If the caller exits the loop early, yield returns false and the repository returns immediately.
 -->
 
 ---
@@ -414,32 +465,10 @@ Read from the inside out. The repository offers each deployment to the caller. I
 | Eager repository | No | 3 |
 | Iterator repository | No | **2** |
 
-All three find <code>deploy-104</code>. With the iterator, the caller's <code>break</code> also stops the repository.
+All three find <code>deploy-104</code>. With the iterator, returning from the search also stops the repository.
 
 <!--
 The request counts come from the three runnable demos.
--->
-
----
-
-<!-- _class: lead -->
-
-# The caller stops at the latest failure
-
-## Keep pagination in the producer
-
-~~~go
-for deployment := range deploymentRepo.Deployments() {
-    if deployment.Status == mockapi.Failed {
-        break
-    }
-}
-~~~
-
-<!--
-Close on the caller code.
-
-The practical definition for this talk: an iterator lets the caller consume values one at a time while the producer retains control of how those values are found.
 -->
 
 ---
@@ -452,8 +481,11 @@ The practical definition for this talk: an iterator lets the caller consume valu
 | Most callers need every value | Callers often stop early |
 | The simplest API is the priority | Avoiding unnecessary work matters |
 
+- **Readability.** The search loop shows what qualifies as a match and when to stop.
+- **Reuse.** Other searches can use the same repository method to traverse deployments.
+
 <!--
-An iterator earns its complexity when values are produced incrementally and early termination can avoid meaningful work.
+Both repository versions keep pagination in one place. An iterator earns its complexity when values are produced incrementally and early termination can avoid meaningful work.
 -->
 
 ---
@@ -481,7 +513,7 @@ for value := range values() {
 <div>
 
 - Start processing when the first value arrives.
-- Stop producing values when the caller breaks.
+- Stop producing values when the caller exits the loop early.
 - Keep pagination inside the repository.
 - Process values without collecting a full slice.
 

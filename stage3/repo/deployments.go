@@ -15,8 +15,8 @@ func New(api *mockapi.API) *Repository {
 	return &Repository{api: api}
 }
 
-// Deployments yields deployments newest first. When the caller breaks, yield
-// returns false and the repository stops before fetching another page.
+// Deployments yields deployments newest first. If the caller exits the loop
+// early, yield returns false and the repository stops before fetching another page.
 func (repository *Repository) Deployments() iter.Seq[mockapi.Deployment] {
 	return func(yield func(mockapi.Deployment) bool) {
 		for page := 1; ; page++ {

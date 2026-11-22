@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"iter"
-	"slices"
 )
 
 func main() {
@@ -22,8 +21,6 @@ func main() {
 			break
 		}
 	}
-
-	slices.All()
 }
 
 func fibonacci() iter.Seq[int] {
