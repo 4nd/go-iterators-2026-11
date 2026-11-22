@@ -4,7 +4,7 @@ package repo
 import (
 	"iter"
 
-	"example.com/iterators/mockapi"
+	"example.com/iterators/paging/mockapi"
 )
 
 type Repository struct {

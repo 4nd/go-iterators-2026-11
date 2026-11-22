@@ -1,7 +1,9 @@
 // Package repo adapts the paginated API for the Stage 2 caller.
 package repo
 
-import "example.com/iterators/mockapi"
+import (
+	"example.com/iterators/paging/mockapi"
+)
 
 type Repository struct {
 	api *mockapi.API

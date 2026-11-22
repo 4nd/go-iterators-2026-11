@@ -95,7 +95,8 @@ func (api *API) Requests() int {
 }
 
 func main() {
-	mode := flag.String("mode", "", "eager or iterator")
+	//mode := flag.String("mode", "", "eager or iterator")
+	mode := new("eager")
 	total := flag.Int("deployments", 5_000_000, "number of generated deployments")
 	pageSize := flag.Int("page-size", 10_000, "deployments generated per page")
 	flag.Parse()

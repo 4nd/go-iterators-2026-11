@@ -13,7 +13,7 @@ package main
 import (
 	"fmt"
 
-	"example.com/iterators/mockapi"
+	"example.com/iterators/paging/mockapi"
 )
 
 func main() {

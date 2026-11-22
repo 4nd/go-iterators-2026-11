@@ -4,83 +4,102 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ba9143f-a1c4-46e1-a524-b72f29b3f22a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/numbers/demo_numbers.go" afterDir="false" />
+    <list default="true" id="9ba9143f-a1c4-46e1-a524-b72f29b3f22a" name="Changes" comment="add Go iterator examples&#10;&#10;Add a Fibonacci iterator demo and talk, plus a collection Map example.&#10;Move the paging demos and supporting files under paging, and update Go to 1.27.">
+      <change afterPath="$PROJECT_DIR$/maps/maps.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numbers/fib.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numbers/talk.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage2/demo_stage2.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage2/demo_stage2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage2/repo/deployments.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage2/repo/deployments.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage2/repo/deployments_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage3/demo_stage3.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage3/demo_stage3.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage3/repo/deployments.go" beforeDir="false" afterPath="$PROJECT_DIR$/stage3/repo/deployments.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage3/repo/deployments_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/talk/iterators.md" beforeDir="false" afterPath="$PROJECT_DIR$/talk/iterators.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorydemo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/paging/memorydemo/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorydemo/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/paging/memorydemo/main_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mockapi/mockapi.go" beforeDir="false" afterPath="$PROJECT_DIR$/paging/mockapi/mockapi.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numbers/demo_numbers.go" beforeDir="false" afterPath="$PROJECT_DIR$/numbers/demo_numbers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage1/demo_stage1.go" beforeDir="false" afterPath="$PROJECT_DIR$/paging/stage1/demo_stage1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage2/demo_stage2.go" beforeDir="false" afterPath="$PROJECT_DIR$/paging/stage2/demo_stage2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage2/repo/deployments.go" beforeDir="false" afterPath="$PROJECT_DIR$/paging/stage2/repo/deployments.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage3/demo_stage3.go" beforeDir="false" afterPath="$PROJECT_DIR$/paging/stage3/demo_stage3.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stage3/repo/deployments.go" beforeDir="false" afterPath="$PROJECT_DIR$/paging/stage3/repo/deployments.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/talk/iterators.html" beforeDir="false" afterPath="$PROJECT_DIR$/paging/talk/iterators.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/talk/iterators.md" beforeDir="false" afterPath="$PROJECT_DIR$/paging/talk/iterators.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
   <component name="GOROOT" url="file://$USER_HOME$/.local/share/mise/installs/go/1.27.4" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.local/share/mise/installs/go/1.27.4/src/iter/iter.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.local/share/mise/installs/go/1.27.4/src/slices/iter.go" root0="SKIP_INSPECTION" />
+  </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000000000000002" />
-      <entry key="S5" value="1.0000005645481622" />
-      <entry key="S10" value="1.0007513642008035" />
-      <entry key="S30" value="1.0909110833281328" />
-      <entry key="S60" value="1.3015146486128542" />
-      <entry key="M2" value="1.5491034953566167" />
-      <entry key="M5" value="1.7867951665642257" />
-      <entry key="M10" value="1.8870147499135657" />
-      <entry key="M15" value="1.92318178668752" />
-      <entry key="M30" value="1.9608234940339044" />
-      <entry key="H1" value="1.9802160445707386" />
-      <entry key="H2" value="1.990058606634344" />
-      <entry key="H4" value="1.9950168876126395" />
-      <entry key="D1" value="1.9991677515955453" />
-      <entry key="W1" value="1.9998810649425596" />
+      <entry key="MS100" value="1.000017048448762" />
+      <entry key="MS500" value="1.1112594759485337" />
+      <entry key="S2" value="1.5967179302000822" />
+      <entry key="S5" value="2.2134675059170585" />
+      <entry key="S10" value="3.133085270787859" />
+      <entry key="S30" value="5.267559532390378" />
+      <entry key="S60" value="8.54642858896166" />
+      <entry key="M2" value="16.503526480716317" />
+      <entry key="M5" value="33.03364965665798" />
+      <entry key="M10" value="44.96920362786539" />
+      <entry key="M15" value="51.53804176279801" />
+      <entry key="M30" value="63.0917813182634" />
+      <entry key="H1" value="73.70335159627166" />
+      <entry key="H2" value="81.63823762912196" />
+      <entry key="H4" value="86.73834259647549" />
+      <entry key="D1" value="91.85517712178107" />
+      <entry key="W1" value="92.83362652397871" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="2.1555692936907697E-305" />
-      <entry key="MS500" value="1.1660371779040728E-61" />
-      <entry key="S2" value="5.843568634763917E-16" />
-      <entry key="S5" value="8.090284023706771E-7" />
-      <entry key="S10" value="9.818691557005627E-4" />
-      <entry key="S30" value="0.1872137759539498" />
-      <entry key="S60" value="0.8321470501820943" />
-      <entry key="M2" value="1.8080522601438342" />
-      <entry key="M5" value="2.9055994917822776" />
-      <entry key="M10" value="3.4080461422606536" />
-      <entry key="M15" value="3.594670147078334" />
-      <entry key="M30" value="3.7917874351838985" />
-      <entry key="H1" value="3.8944678379294166" />
-      <entry key="H2" value="3.946872456322189" />
-      <entry key="H4" value="3.9733452306541643" />
-      <entry key="D1" value="3.995544845906279" />
-      <entry key="W1" value="3.9993632378710244" />
+      <entry key="MS100" value="3.057915528889933E-48" />
+      <entry key="MS500" value="3.152959749480986E-10" />
+      <entry key="S2" value="0.005252927722873568" />
+      <entry key="S5" value="0.17629466079100917" />
+      <entry key="S10" value="0.5882329067791566" />
+      <entry key="S30" value="1.4393021394573164" />
+      <entry key="S60" value="2.413843260871541" />
+      <entry key="M2" value="4.162787728462686" />
+      <entry key="M5" value="7.21816687253026" />
+      <entry key="M10" value="9.435366410550797" />
+      <entry key="M15" value="10.714021023107811" />
+      <entry key="M30" value="12.966069666300642" />
+      <entry key="H1" value="15.165182611051952" />
+      <entry key="H2" value="17.29114019262602" />
+      <entry key="H4" value="19.105574221229215" />
+      <entry key="D1" value="21.40996065537154" />
+      <entry key="W1" value="21.912492291465547" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.1608045297542536E-6" />
-      <entry key="MS500" value="0.07360767434968635" />
-      <entry key="S2" value="0.520871714504111" />
-      <entry key="S5" value="0.7703585234958691" />
-      <entry key="S10" value="0.879209973370688" />
-      <entry key="S30" value="1.2240571964217497" />
-      <entry key="S60" value="2.0893205422753938" />
-      <entry key="M2" value="3.3229654821300687" />
-      <entry key="M5" value="4.673542545069524" />
-      <entry key="M10" value="5.284473953428122" />
-      <entry key="M15" value="5.510508460118565" />
-      <entry key="M30" value="5.748788920408338" />
-      <entry key="H1" value="5.872733837524454" />
-      <entry key="H2" value="5.935946090481162" />
-      <entry key="H4" value="5.967867120431528" />
-      <entry key="D1" value="5.994629746966594" />
-      <entry key="W1" value="5.999232458402445" />
+      <entry key="MS100" value="0.033960465771028334" />
+      <entry key="MS500" value="0.5251338015259572" />
+      <entry key="S2" value="1.2240692825546715" />
+      <entry key="S5" value="2.1370339032459102" />
+      <entry key="S10" value="3.526830808410717" />
+      <entry key="S30" value="6.584861953101099" />
+      <entry key="S60" value="10.852247398274471" />
+      <entry key="M2" value="20.562043935792005" />
+      <entry key="M5" value="40.17191104719319" />
+      <entry key="M10" value="54.35023510271042" />
+      <entry key="M15" value="62.21032196764082" />
+      <entry key="M30" value="76.03227870557602" />
+      <entry key="H1" value="88.85363359981329" />
+      <entry key="H2" value="98.9210514835148" />
+      <entry key="H4" value="105.83942541462264" />
+      <entry key="D1" value="113.26432562336541" />
+      <entry key="W1" value="114.74600089586431" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -94,9 +113,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
     "Go Build.go build example.com/gofixdemo.executor": "Profiler#5",
+    "Go Build.go build example.com/iterators/maps.executor": "Run",
     "Go Build.go build example.com/iterators/memorydemo.executor": "Run",
     "Go Build.go build example.com/iterators/numbers.executor": "Run",
+    "Go Build.go build example.com/iterators/paging/memorydemo.executor": "Run",
     "Go Build.go build example.com/iterators/stage1.executor": "Run",
     "Go Build.go build example.com/iterators/stage2.executor": "Run",
     "Go Build.go build example.com/iterators/stage3.executor": "Run",
@@ -113,17 +135,22 @@
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "demo/latest-failed-deployment",
+    "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "last_opened_file_path": "/Users/andy/code/iterators",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "go.sdk"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
-  <component name="RunManager" selected="Go Build.go build example.com/iterators/numbers">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/paging" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build example.com/iterators/maps">
     <configuration name="go build example.com/gofixdemo" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="iterators" />
       <working_directory value="$PROJECT_DIR$/gofixdemo" />
@@ -131,6 +158,15 @@
       <package value="example.com/gofixdemo" />
       <directory value="$PROJECT_DIR$" />
       <auto_managed_config_id value="$PROJECT_DIR$/gofixdemo" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build example.com/iterators/maps" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="example.com/iterators/maps" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$/maps" />
       <method v="2" />
     </configuration>
     <configuration name="go build example.com/iterators/memorydemo" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
@@ -149,6 +185,42 @@
       <package value="example.com/iterators/numbers" />
       <directory value="$PROJECT_DIR$" />
       <auto_managed_config_id value="$PROJECT_DIR$/numbers" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build example.com/iterators/paging/memorydemo" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="example.com/iterators/paging/memorydemo" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$/paging/memorydemo" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build example.com/iterators/paging/stage1" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="example.com/iterators/paging/stage1" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$/paging/stage1" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build example.com/iterators/paging/stage2" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="example.com/iterators/paging/stage2" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$/paging/stage2" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build example.com/iterators/paging/stage3" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="iterators" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="example.com/iterators/paging/stage3" />
+      <directory value="$PROJECT_DIR$" />
+      <auto_managed_config_id value="$PROJECT_DIR$/paging/stage3" />
       <method v="2" />
     </configuration>
     <configuration name="go build example.com/iterators/stage1" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
@@ -205,6 +277,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Go Build.go build example.com/iterators/maps" />
+      <item itemvalue="Go Build.go build example.com/iterators/paging/memorydemo" />
+      <item itemvalue="Go Build.go build example.com/iterators/paging/stage1" />
+      <item itemvalue="Go Build.go build example.com/iterators/paging/stage2" />
+      <item itemvalue="Go Build.go build example.com/iterators/paging/stage3" />
       <item itemvalue="Go Build.go build example.com/iterators/numbers" />
       <item itemvalue="Go Build.go build example.com/iterators/memorydemo" />
       <item itemvalue="Go Build.go build example.com/iterators/stage1" />
@@ -242,9 +319,21 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add Go iterator examples&#10;&#10;Add a Fibonacci iterator demo and talk, plus a collection Map example.&#10;Move the paging demos and supporting files under paging, and update Go to 1.27." />
+    <option name="LAST_COMMIT_MESSAGE" value="add Go iterator examples&#10;&#10;Add a Fibonacci iterator demo and talk, plus a collection Map example.&#10;Move the paging demos and supporting files under paging, and update Go to 1.27." />
+  </component>
   <component name="VgoModernizerVersionTracker">
     <upgrades>
       <map>
+        <entry key="$PROJECT_DIR$/go.mod">
+          <value>
+            <VersionUpgradeInfo>
+              <version>1.27</version>
+              <timestamp>1795363937315</timestamp>
+            </VersionUpgradeInfo>
+          </value>
+        </entry>
         <entry key="diff.mod">
           <value>
             <VersionUpgradeInfo>
